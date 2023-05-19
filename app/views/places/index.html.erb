@@ -3,7 +3,7 @@
 <ul>
   <% @places.each do |place| %>
     <li>
-      <%= place.name %>
+      <a href="<%= place_path(place) %>"><%= place.name %></a>
     </li>
   <% end %>
 </ul>

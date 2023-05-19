@@ -6,6 +6,10 @@ class PostsController < ApplicationController
   
     def new
       @post = Post.new
+      if params[:place_id].present?
+        @place = Place.find(params[:place_id])
+        @post.place_id = @place.id
+      end
     end
   
     def create
@@ -17,9 +21,9 @@ class PostsController < ApplicationController
         @post.place_id = params["post"]["place_id"]
       end
       if @post.save
-        redirect_to posts_path
+        redirect_to "/places/#{@post["place_id"]}"
       else
-        redirect_to new_post_path
+        redirect_to "/places/#{@post["place_id"]}"
       end
 
     end
