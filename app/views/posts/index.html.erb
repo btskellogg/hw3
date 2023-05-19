@@ -1,9 +1,12 @@
-<div class="row">
-  <% for post in @posts %>
-    <div class="col-3">
-      <h4><%= post["author"] %></h4>
-      <img class="img-fluid" src="<%= post["image"] %>" class="w-full">
-      <p><%= post["body"] %></p>
-    </div>
-  <% end %>
-</div>
+<h1>Posts</h1>
+
+<% @posts.each do |post| %>
+  <div>
+    <h2><%= post.title %></h2>
+    <p><%= post.description %></p>
+    <p>Posted On: <%= post.posted_on %></p>
+    <p>Place ID: <%= post.place_id %></p>
+  </div>
+<% end %>
+
+<p><%= link_to 'New Post', new_post_path %></p>

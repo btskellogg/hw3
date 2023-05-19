@@ -1,20 +1,27 @@
 <h1>New Post</h1>
 
-<%= form_with :model => @post do |form| %>
+<%= form_with(model: @post) do |form| %>
   <p>
-    <%= form.label "author" %>
-    <%= form.text_field "author" %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
   </p>
 
   <p>
-    <%= form.label "body" %>
-    <%= form.text_field "body" %>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
   </p>
 
   <p>
-    <%= form.label "image" %>
-    <%= form.text_field "image" %>
+    <%= form.label :posted_on %>
+    <%= form.date_select :posted_on %>
   </p>
 
-  <p><%= form.submit %></p>
+  <p>
+    <%= form.label :place_id %>
+    <%= form.text_field :place_id %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
 <% end %>
