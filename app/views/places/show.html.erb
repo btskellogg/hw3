@@ -5,7 +5,11 @@
 <ul>
   <% for post in @posts %>
 <h2><%= post.title %></h2>
-      <p><small><%= post.posted_on%></small></p>
+<% if post.posted_on.present? %>
+  <p><%= @post.created_at %></p>
+<% else %>
+  <p><small>No posted date available</small></p>
+<% end %>
       <p><%= post.description %></p>
   <% end %>
 </ul>
