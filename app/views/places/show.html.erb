@@ -4,7 +4,11 @@
 
 <ul>
   <% for post in @posts %>
-    <li><%= post.title %>, <%= post.description %></li>
+    <li>
+      <h2><%= post.title %></h2>
+      <p><strong><%= post.created_at%></strong></p>
+      <p><%= post.description %></p>
+    </li>
   <% end %>
 </ul>
 
